@@ -1,0 +1,31 @@
+ body {
+            font-family: Arial, Helvetica, sans-serif;
+            padding: 20px;
+            background: #f3f3f3;
+        }
+        h1 { color: #333; }
+        .filters {
+            margin-bottom: 20px;
+            display: flex;
+            gap: 15px;
+        }
+        select {
+            padding: 8px;
+            font-size: 16px;
+        }
+        #chartContainer {
+            width: 800px;
+            height: 400px;
+            margin-top: 20px;
+        }
+        table {
+            margin-top: 20px;
+            border-collapse: collapse;
+            background: white;
+            width: 100%;
+        }
+        th, td {
+            padding: 10px;
+            border: 1px solid #ddd;
+        }
+        th { background: #555; color: white; }

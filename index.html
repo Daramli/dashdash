@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Server Utilization Dashboard</title>
+
+    <!-- Chart.js CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <h1>📊 Server Utilization Dashboard</h1>
+
+    <div class="filters">
+        <select id="systemSelect">
+            <option value="">-- Filter by System --</option>
+        </select>
+
+        <select id="deptSelect">
+            <option value="">-- Filter by Department --</option>
+        </select>
+    </div>
+
+    <canvas id="utilChart"></canvas>
+
+    <table id="dataTable">
+        <thead>
+            <tr>
+                <th>System</th>
+                <th>Department</th>
+                <th>Utilization (%)</th>
+                <th>Date</th>
+                <th>Time</th>
+            </tr>
+        </thead>
+        <tbody></tbody>
+    </table>
+
+    <script src="script.js"></script>
+
+</body>
+</html>
