@@ -1,6 +1,5 @@
-// watchout/dashboard/script.js
 
-const API_BASE = "https://web-production-a3251.up.railway.app";
+const API_BASE = "https://watchout.streamlit.app/";
 
 const systemSelect = document.getElementById("systemSelect");
 const deptSelect = document.getElementById("deptSelect");
@@ -117,5 +116,6 @@ tableHead.querySelectorAll('th').forEach((header, index) => {
 // ---------------------------------------------
 systemSelect.addEventListener("change", loadData);
 deptSelect.addEventListener("change", loadData);
+
 
 loadFilters().then(loadData);
