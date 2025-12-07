@@ -1,43 +1,136 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Server Utilization Dashboard</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>WatchOut Dashboard</title>
 
-    <!-- Chart.js CDN -->
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    <link rel="stylesheet" href="style.css">
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet" />
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="theme.css" />
+    <link rel="stylesheet" href="animations.css" />
 </head>
 
 <body>
 
-    <h1>📊 Server Utilization Dashboard</h1>
+    <!-- ------------------------- -->
+    <!-- NAVBAR -->
+    <!-- ------------------------- -->
+    <nav class="navbar fade-in">
+        <div class="logo">WatchOut<span>Analytics</span></div>
 
-    <div class="filters">
-        <select id="systemSelect">
-            <option value="">-- Filter by System --</option>
-        </select>
+        <div class="toggle-theme" id="themeToggle">
+            🌙
+        </div>
+    </nav>
 
-        <select id="deptSelect">
-            <option value="">-- Filter by Department --</option>
-        </select>
+    <!-- ------------------------- -->
+    <!-- DASHBOARD WRAPPER -->
+    <!-- ------------------------- -->
+    <div class="container">
+
+        <!-- ------------------------- -->
+        <!-- CARDS SECTION -->
+        <!-- ------------------------- -->
+        <div class="cards fade-up">
+
+            <div class="card" id="card-total">
+                <h3>Total Records</h3>
+                <p>0</p>
+            </div>
+
+            <div class="card" id="card-avg">
+                <h3>Average Utilization</h3>
+                <p>0%</p>
+            </div>
+
+            <div class="card" id="card-max">
+                <h3>Max Utilization</h3>
+                <p>0%</p>
+            </div>
+
+            <div class="card" id="card-min">
+                <h3>Min Utilization</h3>
+                <p>0%</p>
+            </div>
+
+            <div class="card" id="card-systems">
+                <h3>Systems</h3>
+                <p>0</p>
+            </div>
+
+            <div class="card" id="card-depts">
+                <h3>Departments</h3>
+                <p>0</p>
+            </div>
+
+        </div>
+
+        <!-- ------------------------- -->
+        <!-- FILTERS -->
+        <!-- ------------------------- -->
+        <div class="filters fade-up">
+
+            <div class="filter-box">
+                <label>System</label>
+                <select id="systemSelect"></select>
+            </div>
+
+            <div class="filter-box">
+                <label>Department</label>
+                <select id="departmentSelect"></select>
+            </div>
+
+            <div class="filter-box">
+                <label>Date Range</label>
+                <input type="date" id="dateFrom" />
+                <input type="date" id="dateTo" />
+            </div>
+
+            <button id="applyFilter">Apply</button>
+        </div>
+
+        <!-- ------------------------- -->
+        <!-- CHART SECTION -->
+        <!-- ------------------------- -->
+        <div class="chart-container fade-in">
+            <canvas id="utilChart"></canvas>
+        </div>
+
+        <!-- ------------------------- -->
+        <!-- TABLE SECTION -->
+        <!-- ------------------------- -->
+        <div class="table-container fade-up">
+
+            <table id="dataTable">
+                <thead>
+                    <tr>
+                        <th data-col="usage_date">Date ⬍</th>
+                        <th data-col="usage_time">Time ⬍</th>
+                        <th data-col="system_name">System ⬍</th>
+                        <th data-col="department_name">Department ⬍</th>
+                        <th data-col="utilization_pct">Utilization ⬍</th>
+                    </tr>
+                </thead>
+                <tbody></tbody>
+            </table>
+
+        </div>
+
+        <!-- ------------------------- -->
+        <!-- LOADING SPINNER -->
+        <!-- ------------------------- -->
+        <div class="loading" id="loadingSpinner">
+            <div class="spinner"></div>
+        </div>
+
     </div>
 
-    <canvas id="utilChart"></canvas>
-
-    <table id="dataTable">
-        <thead>
-            <tr>
-                <th>System</th>
-                <th>Department</th>
-                <th>Utilization (%)</th>
-                <th>Date</th>
-                <th>Time</th>
-            </tr>
-        </thead>
-        <tbody></tbody>
-    </table>
-
+    <!-- JS -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script src="script.js"></script>
 
 </body>
