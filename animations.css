@@ -1,6 +1,3 @@
-/* animations.css
-   Simple animation helpers used by HTML (fade-in, fade-up, etc.)
-*/
 
 .fade-in {
   animation: fadeIn 650ms cubic-bezier(.2,.9,.3,1) both;
@@ -18,15 +15,16 @@
   to   { opacity: 1; transform: translateY(0); }
 }
 
-/* card pulse for hover (optional) */
+
 .card-pulse {
   transition: transform .18s ease, box-shadow .18s ease;
 }
 
-/* subtle appear delay utility */
+
 .appear-delay {
   opacity: 0;
   transform: translateY(8px);
   animation: fadeUp 650ms ease forwards;
   animation-delay: 120ms;
 }
+
