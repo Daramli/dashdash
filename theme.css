@@ -10,9 +10,10 @@ body.light {
   --bg: #f6f8fb;
   --panel: #ffffff;
   --muted: #6b7280;
-  --text: #0b1220;
+  --text: #1060ff;
   --accent: #0b76ff;
   --card-shadow: rgba(11,17,28,0.06);
   --glass: rgba(11,17,28,0.03);
   --glass-border: rgba(11,17,28,0.06);
 }
+
