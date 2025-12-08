@@ -1,11 +1,4 @@
-/* theme.css
-   Dark is default; Light theme activates when <body class="light"> is present.
-   This file only overrides CSS variables to switch palettes.
-*/
 
-/* Dark (defaults already in style.css) */
-
-/* Light theme overrides */
 body.light {
   --bg: #f6f8fb;
   --panel: #ffffff;
@@ -16,4 +9,5 @@ body.light {
   --glass: rgba(11,17,28,0.03);
   --glass-border: rgba(11,17,28,0.06);
 }
+
 
